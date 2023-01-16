@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 
 ['jadav ', 'ravi']
+=======
+
+['jadav ', 'ravi']
+>>>>>>> 549fa4c5b5a3f33bba9fe66ba12244fddeeb8ba1
 ['jdalKAJD', 'ajskdhjk']
