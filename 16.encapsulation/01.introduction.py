@@ -1,0 +1,6 @@
+"""
+encaosulation : one class can 
+
+
+
+"""

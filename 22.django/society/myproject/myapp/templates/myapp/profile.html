@@ -1,0 +1,153 @@
+﻿{% extends 'myapp/index.html' %}
+
+{% block content %}  
+<section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Profile <small class="text-muted">Welcome to Digital society</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                                                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                                <i class="zmdi zmdi-edit"></i>
+                            </button>
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Digital society</a></li>
+                                                            <li class="breadcrumb-item">chairmen</li>
+                                                                                        <li class="breadcrumb-item active">Profile</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix profile-page">
+        <div class="col-lg-4 col-md-12">
+            <div class="card profile-header">
+                <div class="body text-center">
+                    <div class="profile-image"> <img src="{{cid.pic.url}}" alt=""> </div>
+                    <div>
+                        <h4 class="m-b-0"><strong>{{cid.username}}</strong></h4>
+                        <span class="job_post">{{uid.email}}</span>
+                        <p>795 Folsom Ave, Suite 600<br> San Francisco, CADGE 94107</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-round">Follow</button>
+                        <button class="btn btn-primary btn-round btn-simple">Message</button>
+                    </div>
+                  
+                </div>                    
+            </div>                                                
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Account">Account</a></li>                        
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane body active" id="about">
+                        <p>The Chairman has the power of overall superintendence and control in respect of the management of the affairs of the Society. He has to keep a watch on the entire functioning of the Society. In case of an emergency, the Honourable Chairman has the power to exercise any power of the Managing Committee.Duties
+                            1. To accept and verify membership of new members, associate members, and nominal members. To check whether all required forms and documents are attached to the application.
+                            
+                            2. To deal with the resignation of members and to give effect accordingly. To keep a proper record of the same in the members individual
+                            
+                            3. To issue a share certificate to the members in the prescribed manner within a specific period.
+                            
+                            4. To enter Nomination and Revocation thereof in the Nomination Register
+                            
+                            5. To deal with complaints made by the members of the society.
+                            
+                            6. To take action against defaulters of the maintenance charges.
+                            
+                            7. To issue notices and draft agenda of all meetings of the General Body and the Managing Committee.
+                            
+                            8. To record the minutes of the General Body And Managing Committee meetings and preserve them as per law.
+                            
+                            9. To maintain account books, registers, and other records properly and keep them in his custody.
+                            
+                            10. To carry out an audit of accounts. To check the Balance Sheet, Income and Expenditure Statement, make proper provisions and get it audited. After auditing, distribute the same to all the members with the notice and agenda of the Annual General Body Meeting.
+                            
+                            11. If required, it is the duty of the Secretary to produce the records before a higher authority with the consent of the Chairman.
+                            
+                            12. To prepare an Audit Rectification Report in respect of general remarks received from the Auditor and to ensure that the shortcomings are practically rectified and reported accordingly to the registering authority.
+                            
+                            13. To inspect the property of the Society and carry out repair work if required.
+                            
+                            14. To appoint people for proper management of the Society like security personnel, sweepers, water tank cleaners, etc.
+                            
+                            15. The Secretary has to fulfill all responsibilities as prescribed under the MCS Act 1960 and Rules 1961 and the bye-laws of the Society He is also responsible for fulfilling the duties as directed by the Managing Committee and General Body meetings.</p>
+            
+                    </div>
+
+
+                    <div class="tab-pane body" id="Account">
+                        <form action="{% url 'change_password' %}" method="post">
+                            {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="email" name="email" value="{{uid.email}}" readonly >
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Current Password" name="current_password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="New Password" name="new_password">
+                        </div>
+                        <input type="submit" class="btn btn-info btn-round" value="Save Changes">
+                       </form>
+                        <hr>
+                        <form method="post" action="{% url 'update_profile_chairmen' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" name="username" value="{{cid.username}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>                                    
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="upload picture" name="picture">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="E-mail" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Country">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group m-b-10">
+                                    <textarea rows="4" class="form-control no-resize" placeholder="Address Line 1"></textarea>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-round" value="Save Changes">
+                            </div>
+                        </div>
+                    </form>
+                    </div>                        
+                </div>
+            </div>
+            <div class="card">
+               
+             
+            </div>               
+        </div>
+    </div>
+
+            </div>
+</section>
+{% endblock %}

@@ -1,0 +1,113 @@
+html : hyper text markup language
+
+using of html we structure web pages
+
+css : cascading style sheet
+
+------------------------------------
+
+html : which is contain tags
+
+   there are two types of tags
+
+   1) singular tags
+   2) paired tags
+
+
+-> singular tag : which is self closing tag
+
+    < openingtag />
+
+=> parired tag : which is comes in paired
+
+    < openingtag> .. content goes her ....</closingtag>
+
+--------------------------------------------------------
+
+<hr> : horizontal row
+<img> : img
+<br>  : break
+
+---------------------------------------------
+
+heding style :
+
+
+<h1> .....<h1>
+<h2> .....<h2>
+.
+.
+<h6> .....<h6>
+
+paragraph tag : which is used to display content as a paragraph view
+
+-> <p> ...content goes her </p>
+
+
+formmating elements
+
+b : bold
+i = italic
+u = underline
+mark = highlight
+sup = superscript
+sub = subscript
+
+
+
+=============================================================
+
+Html list
+
+there are 3 types of list
+
+  1) ordered list
+  2) unorder list
+  3) description list
+
+-> ordered list :
+          
+               <ol>
+                   <li></li>
+                   .
+                   .
+               </ol>
+
+=> unorder list :
+
+              <ul>
+                  <li>....</li>
+
+
+               </ul>
+
+=> description list :
+
+               <dl>
+                   <dt>.....</dt>
+                   <dd>.....</dd>
+                </dl>
+
+dl : description list
+dt : description tag
+dd : description deails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

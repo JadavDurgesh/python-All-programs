@@ -1,0 +1,125 @@
+﻿{% extends 'myapp/index.html' %}
+{% block content %}
+
+<section class="content home">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Book Appointment <small class="text-muted">Welcome to Hotel Hollywood - Family Hotel</small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="..\dashboard\index.html"><i class="zmdi zmdi-home"></i> Hotel Hollywood - Family Hotel</a></li>
+                                                            <li class="breadcrumb-item">Appointment</li>
+                                                                                        <li class="breadcrumb-item active">Book Appointment</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                
+                {% if s_msg %}
+                <div class="alert alert-success" role="alert">
+                    {{s_msg}}
+                  </div>
+                  {% endif %}
+
+<form method="post"    action="{% url 'add_member' %}"    enctype="multipart/form-data">  
+    {% csrf_token %}             
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="header">
+                <h2><strong>Add</strong> Member<small></small> </h2>
+                <ul class="header-dropdown">                            
+                    <li class="remove">
+                        <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" name="firstname">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="enter email" name="email">
+                        </div>
+                    </div>
+
+                
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="contact_no" name="contact_no">
+                        </div>
+                    </div>
+                  
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control datetimepicker" placeholder="family_member" name="family_member">
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter Your job_location " name="job_location">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="block_no" name="block_no">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="house_no" name="house_no">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="file" class="form-control" placeholder="enter picture" name="pic">
+                        </div>
+
+
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="submit" class="btn btn-primary btn-round" value="Submit">
+                        <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </form>
+</section>
+
+{% endblock %}
